@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Why Choose Us | HireAtPoint LLP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header><nav><div class="logo">
+  <img src="logo.png" alt="HireAtPoint LLP Logo">
+  <span>HireAtPoint LLP</span>
+</div></nav></header>
+
+<section class="container">
+<h2 class="section-title">Why Choose HireAtPoint LLP</h2>
+<ul class="list">
+<li>Experienced HR professionals</li>
+<li>Compliance-driven processes</li>
+<li>Customized hiring solutions</li>
+<li>Transparent & ethical practices</li>
+<li>Reliable business support</li>
+</ul>
+</section>
+
+<footer>© 2026 HireAtPoint LLP. All rights reserved.</footer>
+</body>
+</html>

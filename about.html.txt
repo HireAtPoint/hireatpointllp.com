@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Us | HireAtPoint LLP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header><nav><div class="logo">
+  <img src="logo.png" alt="HireAtPoint LLP Logo">
+  <span>HireAtPoint LLP</span>
+</div></nav></header>
+
+<section class="container">
+<h2 class="section-title">About HireAtPoint LLP</h2>
+<p>HireAtPoint LLP is an India-based HR services firm specializing in hiring, payroll processing and talent management.</p>
+<p>Our mission is to simplify workforce management with compliant, scalable and transparent HR solutions.</p>
+</section>
+
+<footer>© 2026 HireAtPoint LLP. All rights reserved.</footer>
+</body>
+</html>

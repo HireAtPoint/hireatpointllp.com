@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Services | HireAtPoint LLP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header><nav><div class="logo">
+  <img src="logo.png" alt="HireAtPoint LLP Logo">
+  <span>HireAtPoint LLP</span>
+</div></nav></header>
+
+<section class="container">
+<h2 class="section-title">Our Services</h2>
+
+<h3>Hiring & Recruitment</h3>
+<ul class="list">
+<li>Permanent & contract hiring</li>
+<li>Candidate sourcing & screening</li>
+<li>Startup & corporate hiring support</li>
+</ul>
+
+<h3>Payroll Processing</h3>
+<ul class="list">
+<li>Monthly payroll management</li>
+<li>PF, ESIC, TDS compliance</li>
+<li>Payslips & reporting</li>
+</ul>
+
+<h3>Talent Management</h3>
+<ul class="list">
+<li>Workforce planning</li>
+<li>Employee lifecycle management</li>
+<li>HR process optimization</li>
+</ul>
+</section>
+
+<footer>© 2026 HireAtPoint LLP. All rights reserved.</footer>
+</body>
+</html>

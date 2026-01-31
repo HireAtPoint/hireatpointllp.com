@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HireAtPoint LLP | Hiring & Payroll Services</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="HireAtPoint LLP provides professional hiring, recruitment and payroll services across India.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<nav>
+<h1>HireAtPoint LLP</h1>
+<div class="logo">
+  <img src="logo.png" alt="HireAtPoint LLP Logo">
+  <span>HireAtPoint LLP</span>
+</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="why-us.html">Why Us</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="legal.html">Legal</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero">
+<h2>Smart Hiring. Reliable Payroll. Strong Talent.</h2>
+<p>Helping Indian businesses hire better, manage payroll compliantly, and grow confidently.</p>
+<a href="contact.html" class="btn">Get Free Consultation</a>
+</section>
+
+<section class="container">
+<h2 class="section-title">Our Core Services</h2>
+<div class="cards">
+<div class="card">
+<h3>Hiring & Recruitment</h3>
+<p>Permanent and contract hiring solutions tailored to your business needs.</p>
+</div>
+<div class="card">
+<h3>Payroll Processing</h3>
+<p>Accurate payroll with PF, ESIC, TDS and statutory compliance support.</p>
+</div>
+<div class="card">
+<h3>Talent Management</h3>
+<p>Workforce planning, HR operations and employee lifecycle management.</p>
+</div>
+</div>
+</section>
+
+<footer>© 2026 HireAtPoint LLP. All rights reserved.</footer>
+</body>
+</html>
