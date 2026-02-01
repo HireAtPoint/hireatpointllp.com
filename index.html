@@ -1,18 +1,76 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"><html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HireAtPoint LLP – Best Recruitment Company</title>
+    <title>About Us | HireAtPoint LLP</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Global Reset */
+        :root {
+            --primary: #0056b3;
+            --secondary: #00aaff;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #f9f9f9;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.7; color: var(--text-dark); }
+        .container { width: 85%; max-width: 1200px; margin: auto; }
+
+        /* Header Styling */
+        header { background: #fff; padding: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 50px; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 14px; }
+        nav ul li a:hover { color: var(--primary); }
+
+        /* Banner Section */
+        .page-banner {
+            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 86, 179, 0.8)), 
+                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200');
+            background-size: cover; background-position: center;
+            color: white; padding: 100px 0; text-align: center;
+        }
+        .page-banner h1 { font-size: 3rem; margin-bottom: 10px; }
+
+        /* Main Content Sections */
+        section { padding: 60px 0; }
+        .section-title { font-size: 2rem; margin-bottom: 25px; color: var(--primary); position: relative; }
+        .section-title::after { content: ''; display: block; width: 50px; height: 3px; background: var(--secondary); margin-top: 10px; }
+
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-text p { margin-bottom: 20px; color: var(--text-light); }
+        .btn-download { 
+            display: inline-block; padding: 12px 25px; background: var(--primary); 
+            color: white; text-decoration: none; border-radius: 5px; font-weight: bold; 
+        }
+
+        /* Expertise / Why Choose Us List */
+        .why-choose { background: var(--bg-light); border-radius: 10px; padding: 40px; }
+        .features-list { 
+            display: grid; grid-template-columns: 1fr 1fr; gap: 15px; list-style: none; margin-top: 20px;
+        }
+        .features-list li { display: flex; align-items: center; font-weight: 500; }
+        .features-list li i { color: var(--secondary); margin-right: 10px; }
+
+        /* Footer */
+        footer { background: #222; color: #fff; padding: 40px 0; margin-top: 60px; text-align: center; }
+        
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .features-list { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
 <header>
     <div class="container">
-        <div class="logo">
-            <img src="logo.png" alt="HireAtPoint LLP Logo" onerror="this.src='https://convictionhr.com/wp-content/uploads/2022/01/logo-1.png'">
-        </div>
+        <div class="logo"><img src="logo.png" alt="HireAtPoint LLP" onerror="this.src='https://convictionhr.com/wp-content/uploads/2022/01/logo-1.png'"></div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -29,10 +87,8 @@
     <div class="hero-content">
         <h1>The Right Role, <br><span>The Right Person</span></h1>
         <p>Our work is people. Because people are the heart of every business at HireAtPoint LLP.</p>
-        <div class="hero-btns">
-            <a href="jobs.html" class="btn-primary">Job Seeker</a>
-            <a href="contact.html" class="btn-secondary">Employer</a>
-        </div>
+        <p>Our motive 
+            Hire. Recruite. Talent</p>
     </div>
 </section>
 
@@ -44,3 +100,4 @@
 
 </body>
 </html>
+
