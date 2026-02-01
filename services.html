@@ -1,188 +1,87 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"><html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services | Conviction HR</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>About Us | HireAtPoint LLP</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* --- CSS STYLES --- */
+        /* Global Reset */
         :root {
-            --primary-blue: #0056b3;
-            --light-blue: #00aaff;
-            --bg-gray: #f8f9fa;
-            --text-main: #333;
-            --white: #ffffff;
+            --primary: #0056b3;
+            --secondary: #00aaff;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #f9f9f9;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.7; color: var(--text-dark); }
+        .container { width: 85%; max-width: 1200px; margin: auto; }
 
-        body {
-            background-color: var(--white);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        /* Header Navigation */
-        header {
-            background: var(--white);
-            padding: 15px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo img { height: 55px; }
-
+        /* Header Styling */
+        header { background: #fff; padding: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 50px; }
         nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 25px; }
-        nav ul li a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 600;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-        nav ul li a:hover { color: var(--primary-blue); }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 14px; }
+        nav ul li a:hover { color: var(--primary); }
 
-        /* Page Banner */
-        .services-banner {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            padding: 80px 0;
-            text-align: center;
+        /* Banner Section */
+        .page-banner {
+            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 86, 179, 0.8)), 
+                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200');
+            background-size: cover; background-position: center;
+            color: white; padding: 100px 0; text-align: center;
         }
-        .services-banner h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; }
+        .page-banner h1 { font-size: 3rem; margin-bottom: 10px; }
 
-        /* Services Grid Section */
-        .services-container {
-            padding: 80px 8%;
-            background-color: var(--bg-gray);
+        /* Main Content Sections */
+        section { padding: 60px 0; }
+        .section-title { font-size: 2rem; margin-bottom: 25px; color: var(--primary); position: relative; }
+        .section-title::after { content: ''; display: block; width: 50px; height: 3px; background: var(--secondary); margin-top: 10px; }
+
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-text p { margin-bottom: 20px; color: var(--text-light); }
+        .btn-download { 
+            display: inline-block; padding: 12px 25px; background: var(--primary); 
+            color: white; text-decoration: none; border-radius: 5px; font-weight: bold; 
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
+        /* Expertise / Why Choose Us List */
+        .why-choose { background: var(--bg-light); border-radius: 10px; padding: 40px; }
+        .features-list { 
+            display: grid; grid-template-columns: 1fr 1fr; gap: 15px; list-style: none; margin-top: 20px;
         }
-
-        .section-header h2 {
-            font-size: 2.2rem;
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-        }
-
-        .section-header .underline {
-            width: 60px;
-            height: 4px;
-            background: var(--light-blue);
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        /* Individual Service Card */
-        .service-card {
-            background: var(--white);
-            padding: 40px 30px;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            border-bottom: 4px solid transparent;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-bottom: 4px solid var(--primary-blue);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .service-card .icon-box {
-            width: 80px;
-            height: 80px;
-            background: rgba(0, 86, 179, 0.1);
-            color: var(--primary-blue);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 32px;
-            transition: 0.3s;
-        }
-
-        .service-card:hover .icon-box {
-            background: var(--primary-blue);
-            color: var(--white);
-        }
-
-        .service-card h3 {
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-            color: #222;
-        }
-
-        .service-card p {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        .read-more {
-            text-decoration: none;
-            color: var(--primary-blue);
-            font-weight: bold;
-            font-size: 14px;
-            text-transform: uppercase;
-        }
+        .features-list li { display: flex; align-items: center; font-weight: 500; }
+        .features-list li i { color: var(--secondary); margin-right: 10px; }
 
         /* Footer */
-        footer {
-            background: #222;
-            color: #bbb;
-            padding: 40px 8%;
-            text-align: center;
-        }
-
-        /* Responsive Design */
+        footer { background: #222; color: #fff; padding: 40px 0; margin-top: 60px; text-align: center; }
+        
         @media (max-width: 768px) {
-            nav { display: none; }
-            .services-grid { grid-template-columns: 1fr; }
+            .about-grid { grid-template-columns: 1fr; }
+            .features-list { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-            <img src="https://convictionhr.com/wp-content/uploads/2022/01/logo-1.png" alt="Conviction HR">
-        </div>
+     <header>
+    <div class="container">
+        <div class="logo"><img src="logo.png" alt="HireAtPoint LLP" onerror="this.src='https://convictionhr.com/wp-content/uploads/2022/01/logo-1.png'"></div>
         <nav>
             <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">ABOUT US</a></li>
-                <li><a href="#" style="color: var(--primary-blue);">SERVICES</a></li>
-                <li><a href="#">FIND A JOB</a></li>
-                <li><a href="#">CONTACT US</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="jobs.html">Find a Job</a></li>
+                <li><a href="contact.html" class="btn-contact">Contact Us</a></li>
             </ul>
         </nav>
-    </header>
+    </div>
+</header>
 
     <section class="services-banner">
         <h1>Our Specialized Services</h1>
@@ -245,3 +144,4 @@
 
 </body>
 </html>
+
