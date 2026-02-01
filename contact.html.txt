@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Us | HireAtPoint LLP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header><nav><div class="logo">
+  <img src="logo.png" alt="HireAtPoint LLP Logo">
+  <span>HireAtPoint LLP</span>
+</div></nav></header>
+
+<section class="container">
+<h2 class="section-title">Contact Us</h2>
+<p>Email: hireatpointllp@gmail.com</p>
+<p>Phone: +91-8090215433</p>
+
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
+</section>
+
+<footer>© 2026 HireAtPoint LLP. All rights reserved.</footer>
+</body>
+</html>
