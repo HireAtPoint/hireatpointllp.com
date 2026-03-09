@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | HireAtPoint LLP</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: start; }
+    .contact-info h2 { font-family: var(--font-head); font-size: 1.8rem; color: var(--primary); margin-bottom: 16px; }
+    .contact-info p { color: var(--text-mid); line-height: 1.8; margin-bottom: 30px; }
+    .info-items { display: flex; flex-direction: column; gap: 20px; }
+    .info-item { display: flex; gap: 16px; align-items: flex-start; }
+    .info-icon { width: 46px; height: 46px; border-radius: 12px; background: rgba(10,61,124,0.08); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .info-item h4 { font-size: 0.88rem; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .info-item a, .info-item p { font-size: 0.95rem; color: var(--text); margin: 0; }
+    .info-item a:hover { color: var(--accent); }
+    .contact-form-wrap { background: #fff; border-radius: var(--radius-lg); padding: 46px 40px; box-shadow: var(--shadow-md); border: 1px solid var(--border); }
+    .contact-form-wrap h3 { font-family: var(--font-head); font-size: 1.5rem; color: var(--primary); margin-bottom: 8px; }
+    .contact-form-wrap p { color: var(--text-mid); font-size: 0.92rem; margin-bottom: 28px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 7px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 12px 16px; border: 1.5px solid var(--border); border-radius: var(--radius);
+      font-family: var(--font-body); font-size: 0.95rem; color: var(--text); background: var(--bg-soft);
+      transition: var(--transition); outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); background: #fff; box-shadow: 0 0 0 3px rgba(0,180,216,0.1); }
+    .form-group textarea { min-height: 130px; resize: vertical; }
+    .form-success { display: none; text-align: center; padding: 30px; }
+    .form-success i { font-size: 3rem; color: #22c55e; margin-bottom: 14px; }
+    .form-success h4 { font-family: var(--font-head); font-size: 1.4rem; color: var(--primary); }
+    .map-wrap { border-radius: var(--radius-lg); overflow: hidden; margin-top: 60px; box-shadow: var(--shadow-sm); }
+    .map-wrap iframe { width: 100%; height: 340px; border: none; display: block; }
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form-wrap { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="HireAtPoint LLP" onerror="this.style.display='none'; this.nextSibling.style.display='block'">
+        <span class="logo-text" style="display:none">HireAtPoint</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="why-us.html">Why Us</a>
+        <a href="legal.html">Legal</a>
+        <a href="contact.html" class="btn-nav active">Contact Us</a>
+      </nav>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="why-us.html">Why Us</a>
+    <a href="legal.html">Legal</a>
+    <a href="contact.html" class="btn-nav-mob active">Contact Us</a>
+  </nav>
+</header>
+
+<div class="page-banner">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p>Tell us your hiring requirement. Our consultants will get back to you within 24 hours.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Contact Us</span></div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- Left: Info -->
+      <div class="contact-info">
+        <span class="section-label">Get in Touch</span>
+        <h2>Let's Start a Conversation</h2>
+        <div class="divider"></div>
+        <p>Whether you're a company looking to hire or a professional exploring opportunities, we'd love to hear from you. Fill out the form or reach us directly.</p>
+        <div class="info-items">
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+            <div><h4>Email Us</h4><a href="mailto:info@hireatpoint.com">info@hireatpoint.com</a></div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-phone"></i></div>
+            <div><h4>Call Us</h4><a href="tel:+919999999999">+91 99999 99999</a></div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
+            <div><h4>WhatsApp</h4><a href="https://wa.me/919999999999" target="_blank">Chat with us on WhatsApp</a></div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div><h4>Office</h4><p>Mumbai, Maharashtra, India</p></div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-clock"></i></div>
+            <div><h4>Business Hours</h4><p>Mon – Sat: 9:00 AM – 7:00 PM</p></div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; margin-top:32px;">
+          <a href="https://linkedin.com" target="_blank" style="width:40px;height:40px;border-radius:10px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" style="width:40px;height:40px;border-radius:10px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;"><i class="fab fa-twitter"></i></a>
+          <a href="#" style="width:40px;height:40px;border-radius:10px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="contact-form-wrap">
+        <h3>Send Us a Message</h3>
+        <p>We'll respond within 24 business hours.</p>
+        <div id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="company">Company Name</label>
+              <input type="text" id="company" placeholder="Your company">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" placeholder="you@company.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="service">Service You're Interested In</label>
+            <select id="service">
+              <option value="">Select a service...</option>
+              <option>Executive Search</option>
+              <option>Bulk Hiring</option>
+              <option>IT & Tech Recruitment</option>
+              <option>Contractual Staffing</option>
+              <option>Talent Mapping</option>
+              <option>HR Consulting</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message *</label>
+            <textarea id="message" placeholder="Tell us about your hiring requirement, number of positions, industry, timeline..."></textarea>
+          </div>
+          <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="submitForm()">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <i class="fas fa-check-circle"></i>
+          <h4>Message Sent!</h4>
+          <p style="color:var(--text-mid); margin-top:8px;">Thank you for reaching out. Our team will contact you within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823277!2d72.74109995096179!3d19.08250584540718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><span class="logo-text" style="font-size:1.5rem;color:#fff;">HireAtPoint LLP</span><p>Recruit. Target. Hire. Connecting the right talent with the right opportunity.</p><div class="social-links" style="margin-top:20px;"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="why-us.html">Why Us</a></li><li><a href="legal.html">Legal</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Executive Search</a></li><li><a href="services.html">Bulk Hiring</a></li><li><a href="services.html">IT Recruitment</a></li><li><a href="services.html">Contractual Staffing</a></li><li><a href="services.html">HR Consulting</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:info@hireatpoint.com"><i class="fas fa-envelope" style="margin-right:8px;color:var(--accent)"></i>info@hireatpoint.com</a></li><li><a href="tel:+919999999999"><i class="fas fa-phone" style="margin-right:8px;color:var(--accent)"></i>+91 99999 99999</a></li><li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right:8px;color:var(--accent)"></i>Mumbai, India</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 HireAtPoint LLP. All rights reserved.</p><a href="legal.html" style="font-size:0.85rem;opacity:0.55;">Privacy Policy & Legal</a></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919999999999" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<button id="backToTop"><i class="fas fa-chevron-up"></i></button>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileNav.classList.toggle('open'); });
+  const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 400));
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  function submitForm() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    if (!name || !email || !message) { alert('Please fill in all required fields.'); return; }
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+</script>
+</body>
+</html>
