@@ -193,13 +193,39 @@
 <a href="https://wa.me/918090215433" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <button id="backToTop"><i class="fas fa-chevron-up"></i></button>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
+  // Hamburger menu
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
   hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileNav.classList.toggle('open'); });
+
+  // Back to top
   const btn = document.getElementById('backToTop');
   window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 400));
   btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
+  // Contact form submission
   function submitForm() {
-    const name = document.getElementById('name').value
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !message) {
+      alert('Please fill in all required fields: Full Name, Email Address, and Message.');
+      return;
+    }
+
+    // Basic email format check
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    // Show success message
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+</script>
+</body>
+</html>
