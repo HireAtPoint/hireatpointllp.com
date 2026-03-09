@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hireatpoint.github.io/hireatpointllp.com/sitemap.xml
