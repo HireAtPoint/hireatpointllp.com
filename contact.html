@@ -34,10 +34,12 @@
     .social-row { display: flex; gap: 12px; margin-top: 32px; }
     .social-btn { width: 40px; height: 40px; border-radius: 10px; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
     .social-btn:hover { background: var(--accent); }
+    .sending-state { opacity: 0.7; pointer-events: none; }
     @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 36px; } .form-row { grid-template-columns: 1fr; } .contact-form-wrap { padding: 28px 22px; } }
   </style>
 </head>
 <body>
+
 <header class="site-header">
   <div class="container">
     <div class="header-inner">
@@ -77,6 +79,8 @@
 <section class="section">
   <div class="container">
     <div class="contact-grid">
+
+      <!-- Left: Contact Info -->
       <div class="contact-info">
         <span class="section-label">Get in Touch</span>
         <h2>Let's Start a Conversation</h2>
@@ -111,9 +115,11 @@
         </div>
       </div>
 
+      <!-- Right: Contact Form -->
       <div class="contact-form-wrap">
         <h3>Send Us a Message</h3>
         <p>We'll respond within 24 business hours.</p>
+
         <div id="contactForm">
           <div class="form-row">
             <div class="form-group">
@@ -156,13 +162,16 @@
           <button class="btn btn-primary" style="width:100%; justify-content:center;" id="sendBtn">
             <i class="fas fa-paper-plane"></i>&nbsp; Send Message
           </button>
+          <p id="errorMsg" style="color:#e53e3e; font-size:0.88rem; margin-top:12px; display:none;"></p>
         </div>
+
         <div class="form-success" id="formSuccess">
           <i class="fas fa-check-circle"></i>
           <h4>Message Sent!</h4>
           <p>Thank you for reaching out. Our team will contact you within 24 hours.</p>
         </div>
       </div>
+
     </div>
 
     <div class="map-wrap">
@@ -186,7 +195,11 @@
       </div>
       <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="why-us.html">Why Us</a></li><li><a href="legal.html">Legal</a></li></ul></div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Executive Search</a></li><li><a href="services.html">Bulk Hiring</a></li><li><a href="services.html">IT Recruitment</a></li><li><a href="services.html">Contractual Staffing</a></li><li><a href="services.html">Payroll Management</a></li></ul></div>
-      <div class="footer-col"><h4>Contact</h4><ul><li><span id="footerEm"></span></li><li><a href="tel:+918090215433"><i class="fas fa-phone" style="margin-right:8px; color:var(--accent);"></i>+91 80902 15433</a></li><li><i class="fas fa-map-marker-alt" style="margin-right:8px; color:var(--accent);"></i>E904, Acropolis, Virar</li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><span id="footerEm"></span></li>
+        <li><a href="tel:+918090215433"><i class="fas fa-phone" style="margin-right:8px; color:var(--accent);"></i>+91 80902 15433</a></li>
+        <li><i class="fas fa-map-marker-alt" style="margin-right:8px; color:var(--accent);"></i>E904, Acropolis, Virar</li>
+      </ul></div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2025 HireAtPoint LLP. All rights reserved.</p>
@@ -199,14 +212,12 @@
 <button id="backToTop"><i class="fas fa-chevron-up"></i></button>
 
 <script>
-  // Build email via JS so Cloudflare cannot detect or obfuscate it
+  // Email via JS — avoids Cloudflare obfuscation
   var u = 'hireatpointllp';
   var d = 'gmail.com';
   var full = u + '@' + d;
-  var link = '<a href="mai' + 'lto:' + full + '" style="color:var(--text);font-size:0.95rem;">' + full + '<\/a>';
-  var linkWithIcon = '<a href="mai' + 'lto:' + full + '" style="color:var(--text-mid);font-size:0.9rem;"><i class="fas fa-envelope" style="margin-right:8px;color:var(--accent);"><\/i>' + full + '<\/a>';
-  document.getElementById('em').innerHTML = link;
-  document.getElementById('footerEm').innerHTML = linkWithIcon;
+  document.getElementById('em').innerHTML = '<a href="mai'+'lto:'+full+'" style="color:var(--text);font-size:0.95rem;">'+full+'<\/a>';
+  document.getElementById('footerEm').innerHTML = '<a href="mai'+'lto:'+full+'" style="color:var(--text-mid);font-size:0.9rem;"><i class="fas fa-envelope" style="margin-right:8px;color:var(--accent);"><\/i>'+full+'<\/a>';
 
   // Hamburger
   var hamburger = document.getElementById('hamburger');
@@ -231,35 +242,79 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Contact Form
+  // ── Contact Form → Formspree ──
   document.getElementById('sendBtn').addEventListener('click', function() {
     var name    = document.getElementById('fname').value.trim();
     var email   = document.getElementById('femail').value.trim();
+    var company = document.getElementById('fcompany').value.trim();
+    var phone   = document.getElementById('fphone').value.trim();
+    var service = document.getElementById('fservice').value;
     var message = document.getElementById('fmessage').value.trim();
+    var errEl   = document.getElementById('errorMsg');
 
+    // Validation
     if (name === '') {
-      alert('Please enter your Full Name.');
+      errEl.textContent = 'Please enter your Full Name.';
+      errEl.style.display = 'block';
       document.getElementById('fname').focus();
       return;
     }
     if (email === '') {
-      alert('Please enter your Email Address.');
+      errEl.textContent = 'Please enter your Email Address.';
+      errEl.style.display = 'block';
       document.getElementById('femail').focus();
       return;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      alert('Please enter a valid Email Address.');
+      errEl.textContent = 'Please enter a valid Email Address.';
+      errEl.style.display = 'block';
       document.getElementById('femail').focus();
       return;
     }
     if (message === '') {
-      alert('Please enter your Message.');
+      errEl.textContent = 'Please enter your Message.';
+      errEl.style.display = 'block';
       document.getElementById('fmessage').focus();
       return;
     }
 
-    document.getElementById('contactForm').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+    errEl.style.display = 'none';
+
+    // Disable button while sending
+    var btn = document.getElementById('sendBtn');
+    btn.textContent = 'Sending...';
+    btn.classList.add('sending-state');
+
+    // Send to Formspree
+    fetch('https://formspree.io/f/mzdjdran', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        name:    name,
+        email:   email,
+        company: company,
+        phone:   phone,
+        service: service,
+        message: message
+      })
+    })
+    .then(function(response) {
+      if (response.ok) {
+        // Success — show thank you screen
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        return response.json().then(function(data) {
+          throw new Error(data.error || 'Something went wrong. Please try again.');
+        });
+      }
+    })
+    .catch(function(err) {
+      btn.innerHTML = '<i class="fas fa-paper-plane"><\/i>&nbsp; Send Message';
+      btn.classList.remove('sending-state');
+      errEl.textContent = err.message || 'Failed to send. Please email us directly.';
+      errEl.style.display = 'block';
+    });
   });
 </script>
 </body>
