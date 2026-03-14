@@ -201,7 +201,7 @@
 <script>
   var hamburger=document.getElementById('hamburger'),mobileNav=document.getElementById('mobileNav');
   hamburger.addEventListener('click',function(){hamburger.classList.toggle('open');mobileNav.classList.toggle('open');});
-  document.querySelectorAll('.mobile-nav a').forEach(function(a){a.addEventListener('click',function(){mobileNav.classList.remove('open');hamburger.classList.remove('open');});});
+  document.querySelectorAll('.mobile-nav a').forEach(function(a){a.addEventListener('click',function(e){var href=this.getAttribute('href');mobileNav.classList.remove('open');hamburger.classList.remove('open');if(href&&href!=='#'){setTimeout(function(){window.location.href=href;},50);}e.preventDefault();});});
   var topBtn=document.getElementById('backToTop');
   window.addEventListener('scroll',function(){topBtn.classList.toggle('visible',window.scrollY>400);});
   topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
