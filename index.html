@@ -72,8 +72,9 @@
     .industries { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 36px; }
     .industry-pill { padding: 10px 20px; border: 1.5px solid var(--border); border-radius: 50px; font-size: 0.88rem; font-weight: 500; color: var(--text-mid); transition: var(--transition); display: flex; align-items: center; gap: 8px; }
     .industry-pill:hover { border-color: var(--accent); color: var(--accent); background: rgba(0,180,216,0.06); }
-    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
-    @media (max-width: 1024px) { .steps { grid-template-columns: repeat(2,1fr); } .steps::before { display:none; } .testi-grid { grid-template-columns: repeat(2,1fr); } .why-grid { grid-template-columns: 1fr; } }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; align-items: start; }
+    .testimonial-card { height: 100%; }
+    @media (max-width: 1024px) { .steps { grid-template-columns: repeat(2,1fr); } .steps::before { display:none; } .testi-grid { grid-template-columns: repeat(3,1fr); } .why-grid { grid-template-columns: 1fr; } }
     @media (max-width: 768px) { .hero { min-height: auto; padding: 90px 0 60px; } .steps { grid-template-columns: 1fr 1fr; } .testi-grid { grid-template-columns: 1fr; } }
     @media (max-width: 480px) { .steps { grid-template-columns: 1fr; } }
   </style>
@@ -255,9 +256,9 @@
       <div class="divider center"></div>
     </div>
     <div class="testi-grid" style="margin-top:48px;">
-      <div class="testimonial-card"><p>HireAtPoint found us the right engineers quickly. Their screening process is thorough — every candidate was interview-ready.</p><div class="testimonial-author"><div class="author-avatar">R</div><div class="author-info"><strong></div></div></div>
-      <div class="testimonial-card"><p>We needed to hire across multiple cities in a short time. HireAtPoint delivered with professionalism at every step.</p><div class="testimonial-author"><div class="author-avatar">P</div><div class="author-info"><strong></div></div></div>
-      <div class="testimonial-card"><p>Our go-to partner for all mid and senior-level hiring. They understand our culture and always find people who fit.</p><div class="testimonial-author"><div class="author-avatar">A</div><div class="author-info"><strong></div></div></div>
+      <div class="testimonial-card"><p>HireAtPoint found us the right engineers quickly. Their screening process is thorough — every candidate was interview-ready.</p></div>
+      <div class="testimonial-card"><p>We needed to hire across multiple cities in a short time. HireAtPoint delivered with professionalism at every step.</p></div>
+      <div class="testimonial-card"><p>Our go-to partner for all mid and senior-level hiring. They understand our culture and always find people who fit.</p></div>
     </div>
   </div>
 </section>
