@@ -179,5 +179,16 @@
 
 <a href="https://wa.me/918090215433" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <button id="backToTop"><i class="fas fa-chevron-up"></i></button>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+<script>
+  var u='hireatpointllp',d='gmail.com',full=u+'@'+d;
+  var emEl=document.getElementById('footerEm');
+  if(emEl){emEl.innerHTML='<a href="mai'+'lto:'+full+'" style="color:rgba(255,255,255,0.75);font-size:0.9rem;"><i class="fas fa-envelope" style="margin-right:8px;color:#00b4d8;"></i>'+full+'</a>';}
+  var hamburger=document.getElementById('hamburger'),mobileNav=document.getElementById('mobileNav');
+  hamburger.addEventListener('click',function(){hamburger.classList.toggle('open');mobileNav.classList.toggle('open');});
+  document.querySelectorAll('.mobile-nav a').forEach(function(a){a.addEventListener('click',function(e){var href=this.getAttribute('href');mobileNav.classList.remove('open');hamburger.classList.remove('open');if(href&&href!=='#'){setTimeout(function(){window.location.href=href;},50);}e.preventDefault();});});
+  var topBtn=document.getElementById('backToTop');
+  window.addEventListener('scroll',function(){topBtn.classList.toggle('visible',window.scrollY>400);});
+  topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+</script>
+</body>
+</html>
