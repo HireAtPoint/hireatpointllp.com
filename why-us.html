@@ -160,18 +160,15 @@
       <h2 class="section-title">Don't Take Our Word for It</h2>
       <div class="divider center"></div>
     </div>
-    <div class="grid-3" style="margin-top:48px;">
+    <div class="grid-3" style="margin-top:48px;align-items:start;">
       <div class="testimonial-card">
         <p>We've worked with 4 recruitment firms. HireAtPoint is the only one that truly understands our business and consistently delivers.</p>
-        <div class="testimonial-author"><div class="author-avatar">V</div><div class="author-info"><strong>Vikram Nair</strong><span>COO, BuildIndia Projects</span></div></div>
       </div>
       <div class="testimonial-card">
         <p>From first call to offer acceptance — the process was smooth, professional, and exactly what we needed. Highly recommended.</p>
-        <div class="testimonial-author"><div class="author-avatar">D</div><div class="author-info"><strong>Deepika Rao</strong><span>VP HR, MediGroup Healthcare</span></div></div>
       </div>
       <div class="testimonial-card">
         <p>They filled 3 senior roles in 10 days that we had been struggling with for 3 months. That speaks for itself.</p>
-        <div class="testimonial-author"><div class="author-avatar">K</div><div class="author-info"><strong>Karan Mehta</strong><span>Founder, TechBridge Solutions</span></div></div>
       </div>
     </div>
   </div>
@@ -189,7 +186,7 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><span class="logo-text" style="font-size:1.5rem;color:#fff;">HireAtPoint LLP</span><p>Recruit. Target. Hire. Connecting the right talent with the right opportunity.</p><div class="social-links" style="margin-top:20px;"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="https://x.com/hireatpoin2026" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a><a href="https://www.instagram.com/hireatpointllp26" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div></div>
+      <div class="footer-brand"><span class="logo-text" style="font-size:1.5rem;color:#fff;">HireAtPoint LLP</span><p>Recruit. Target. Hire. Connecting the right talent with the right opportunity.</p><div class="social-links" style="margin-top:20px;"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="https://x.com/hireatpoin2026" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a><a href="https://www.instagram.com/hireatpointllp26" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a><a href="https://wa.me/918090215433" target="_blank"><i class="fab fa-whatsapp"></i></a></div></div>
       <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="why-us.html">Why Us</a></li><li><a href="legal.html">Legal</a></li></ul></div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Executive Search</a></li><li><a href="services.html">Bulk Hiring</a></li><li><a href="services.html">IT Recruitment</a></li><li><a href="services.html">Contractual Staffing</a></li><li><a href="services.html">HR Consulting</a></li></ul></div>
       <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:hireatpointllp@gmail.com">hireatpointllp@gmail.com</a></li><li><a href="tel:918090215433"><i class="fas fa-phone" style="margin-right:8px;color:var(--accent)"></i>+91 80902 15433</a></li><li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right:8px;color:var(--accent)"></i>Virar, Maharashtra</a></li></ul></div>
@@ -201,5 +198,13 @@
 <a href="https://wa.me/918090215433" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <button id="backToTop"><i class="fas fa-chevron-up"></i></button>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  co
+<script>
+  var hamburger=document.getElementById('hamburger'),mobileNav=document.getElementById('mobileNav');
+  hamburger.addEventListener('click',function(){hamburger.classList.toggle('open');mobileNav.classList.toggle('open');});
+  document.querySelectorAll('.mobile-nav a').forEach(function(a){a.addEventListener('click',function(){mobileNav.classList.remove('open');hamburger.classList.remove('open');});});
+  var topBtn=document.getElementById('backToTop');
+  window.addEventListener('scroll',function(){topBtn.classList.toggle('visible',window.scrollY>400);});
+  topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+</script>
+</body>
+</html>
