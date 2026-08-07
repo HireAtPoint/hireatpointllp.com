@@ -171,11 +171,10 @@
       <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Executive Search</a></li><li><a href="services.html">Bulk Hiring</a></li><li><a href="services.html">IT Recruitment</a></li><li><a href="services.html">Contractual Staffing</a></li><li><a href="services.html">HR Consulting</a></li></ul></div>
       <div class="footer-col"><h4>Contact</h4><ul><li><span id="footerEm"></span></li><li><a href="tel:+918090215433"><i class="fas fa-phone" style="margin-right:8px;color:var(--accent)"></i>+91 80902 15433</a></li><li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right:8px;color:var(--accent)"></i>Virar, Maharashtra</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><p>© 2026 HireAtPoint LLP. All rights reserved.</p><a href="legal.html" style="font-size:0.85rem;opacity:0.55;">Privacy Policy & Legal</a></div>
+    <div class="footer-bottom"><p>© 2025 HireAtPoint LLP. All rights reserved.</p><a href="legal.html" style="font-size:0.85rem;opacity:0.55;">Privacy Policy & Legal</a></div>
   </div>
 </footer>
 
-<a href="https://wa.me/918090215433" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <button id="backToTop"><i class="fas fa-chevron-up"></i></button>
 
 <script>
@@ -197,5 +196,60 @@
   window.addEventListener('scroll',function(){topBtn.classList.toggle('visible',window.scrollY>400);});
   topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
 </script>
+
+<!-- WhatsApp Chat Widget -->
+<div id="waWidget" style="position:fixed;bottom:85px;right:24px;z-index:1000;font-family:'DM Sans',sans-serif;">
+  <!-- Chat Bubble Popup -->
+  <div id="waBubble" style="display:none;background:#fff;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.18);width:290px;margin-bottom:12px;overflow:hidden;">
+    <!-- Header -->
+    <div style="background:#25D366;padding:16px 18px;display:flex;align-items:center;gap:12px;">
+      <div style="width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#fff;flex-shrink:0;">
+        <i class="fab fa-whatsapp"></i>
+      </div>
+      <div>
+        <div style="color:#fff;font-weight:700;font-size:0.95rem;">HireAtPoint LLP</div>
+        <div style="color:rgba(255,255,255,0.85);font-size:0.78rem;">&#9679; Typically replies instantly</div>
+      </div>
+      <button onclick="document.getElementById('waBubble').style.display='none'" style="margin-left:auto;background:none;border:none;color:#fff;font-size:1.1rem;cursor:pointer;opacity:0.8;">&#x2715;</button>
+    </div>
+    <!-- Message -->
+    <div style="padding:18px;background:#f0f4f8;">
+      <div style="background:#fff;border-radius:12px;padding:12px 14px;box-shadow:0 1px 4px rgba(0,0,0,0.08);font-size:0.88rem;color:#1a1a2e;line-height:1.6;">
+        👋 Hi there! Welcome to <strong>HireAtPoint LLP</strong>.<br><br>
+        Looking to <strong>hire talent</strong> or explore <strong>career opportunities</strong>? Chat with us — we're happy to help!
+      </div>
+      <div style="font-size:0.72rem;color:#aaa;margin-top:6px;text-align:right;">Just now</div>
+    </div>
+    <!-- CTA -->
+    <div style="padding:14px 18px;background:#fff;">
+      <a href="https://wa.me/918090215433?text=Hi" target="_blank" rel="noopener"
+         style="display:flex;align-items:center;justify-content:center;gap:8px;background:#25D366;color:#fff;padding:12px;border-radius:10px;font-weight:700;font-size:0.92rem;text-decoration:none;transition:background 0.2s;"
+         onmouseover="this.style.background='#1ebe57'" onmouseout="this.style.background='#25D366'">
+        <i class="fab fa-whatsapp"></i> Start Chat
+      </a>
+    </div>
+  </div>
+  <!-- Float Button -->
+  <button id="waBtn" onclick="toggleWa()" style="width:54px;height:54px;border-radius:50%;background:#25D366;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#fff;box-shadow:0 4px 20px rgba(37,211,102,0.45);transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    <i class="fab fa-whatsapp"></i>
+  </button>
+</div>
+<!-- Pulse ring animation -->
+<style>
+  #waBtn { animation: waPulse 2.5s infinite; }
+  @keyframes waPulse { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.45);} 50%{box-shadow:0 4px 28px rgba(37,211,102,0.75),0 0 0 8px rgba(37,211,102,0.12);} }
+</style>
+<script>
+  function toggleWa(){
+    var b=document.getElementById('waBubble');
+    b.style.display = b.style.display==='none' ? 'block' : 'none';
+  }
+  // Auto-show bubble after 5 seconds
+  setTimeout(function(){
+    var b=document.getElementById('waBubble');
+    if(b) b.style.display='block';
+  }, 5000);
+</script>
+
 </body>
 </html>
