@@ -191,7 +191,7 @@
       <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Executive Search</a></li><li><a href="services.html">Bulk Hiring</a></li><li><a href="services.html">IT Recruitment</a></li><li><a href="services.html">Contractual Staffing</a></li><li><a href="services.html">HR Consulting</a></li></ul></div>
       <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:hireatpointllp@gmail.com">hireatpointllp@gmail.com</a></li><li><a href="tel:918090215433"><i class="fas fa-phone" style="margin-right:8px;color:var(--accent)"></i>+91 80902 15433</a></li><li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right:8px;color:var(--accent)"></i>Virar, Maharashtra</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><p>© 2025 HireAtPoint LLP. All rights reserved.</p><a href="legal.html" style="font-size:0.85rem;opacity:0.55;">Privacy Policy & Legal</a></div>
+    <div class="footer-bottom"><p>© 2026 HireAtPoint LLP. All rights reserved.</p><a href="legal.html" style="font-size:0.85rem;opacity:0.55;">Privacy Policy & Legal</a></div>
   </div>
 </footer>
 
@@ -199,6 +199,17 @@
 <button id="backToTop"><i class="fas fa-chevron-up"></i></button>
 
 <script>
+  var hamburger=document.getElementById('hamburger'),mobileNav=document.getElementById('mobileNav');
+  hamburger.addEventListener('click',function(){hamburger.classList.toggle('open');mobileNav.classList.toggle('open');});
+  document.querySelectorAll('.mobile-nav a').forEach(function(a){a.addEventListener('click',function(e){var href=this.getAttribute('href');mobileNav.classList.remove('open');hamburger.classList.remove('open');if(href&&href!=='#'){setTimeout(function(){window.location.href=href;},50);}e.preventDefault();});});
+  var topBtn=document.getElementById('backToTop');
+  window.addEventListener('scroll',function(){topBtn.classList.toggle('visible',window.scrollY>400);});
+  topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+</script>
+<script>
+  var u='hireatpointllp',d='gmail.com',full=u+'@'+d;
+  var emEl=document.getElementById('footerEm');
+  if(emEl){emEl.innerHTML='<a href="mai'+'lto:'+full+'" style="color:rgba(255,255,255,0.75);font-size:0.9rem;"><i class="fas fa-envelope" style="margin-right:8px;color:#00b4d8;"></i>'+full+'</a>';}
   var hamburger=document.getElementById('hamburger'),mobileNav=document.getElementById('mobileNav');
   hamburger.addEventListener('click',function(){hamburger.classList.toggle('open');mobileNav.classList.toggle('open');});
   document.querySelectorAll('.mobile-nav a').forEach(function(a){a.addEventListener('click',function(e){var href=this.getAttribute('href');mobileNav.classList.remove('open');hamburger.classList.remove('open');if(href&&href!=='#'){setTimeout(function(){window.location.href=href;},50);}e.preventDefault();});});

@@ -281,3 +281,9 @@ ul { list-style: none; }
 @media (max-width: 480px) {
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .btn { padding: 11px 20px; font-size: 0.88rem; }
+}
+
+/* ── CTA Band ── */
+.cta-band { background: linear-gradient(135deg, var(--primary), var(--accent-dark)); color: #fff; padding: 70px 0; text-align: center; }
+.cta-band h2 { font-family: var(--font-head); font-size: clamp(1.7rem, 3.5vw, 2.5rem); margin-bottom: 14px; }
+.cta-band p { font-size: 1.05rem; opacity: 0.85; max-width: 520px; margin: 0 auto 32px; }
